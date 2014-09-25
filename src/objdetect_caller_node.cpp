@@ -10,7 +10,7 @@ using rviz_objdetect_caller::ObjDetectCaller;
 
 int main (int argc, char **argv) {
   ros::init(argc, argv, "objdetect_caller");
-  ObjDetectCaller caller("object_detection_user_command");
+  ObjDetectCaller caller("tabletop_segmentation", "table_clusters");
   caller.Start();
   ros::spin();
 
