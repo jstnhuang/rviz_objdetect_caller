@@ -44,3 +44,11 @@ rosbuild_add_compile_flags(publish_points "-std=c++0x")
 rosbuild_add_executable(publish_points_node src/publish_points_node.cpp)
 target_link_libraries(publish_points_node publish_points)
 rosbuild_add_compile_flags(publish_points_node "-std=c++0x")
+
+rosbuild_add_library(publish_boxes src/publish_boxes.cpp)
+rosbuild_link_boost(publish_boxes thread)
+rosbuild_add_compile_flags(publish_boxes "-std=c++0x")
+
+rosbuild_add_executable(publish_boxes_node src/publish_boxes_node.cpp)
+target_link_libraries(publish_boxes_node publish_boxes)
+rosbuild_add_compile_flags(publish_boxes_node "-std=c++0x")

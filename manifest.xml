@@ -8,9 +8,11 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/rviz_objdetect_caller</url>
+  <depend package="geometry_msgs"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="pr2_interactive_object_detection"/>
   <depend package="roscpp"/>
   <depend package="sensor_msgs"/>
-  <depend package="pr2_interactive_object_detection"/>
 
 </package>
 
