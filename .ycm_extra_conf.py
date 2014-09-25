@@ -50,7 +50,17 @@ flags = [
 '-isystem',
 '/opt/ros/groovy/stacks/pr2_object_manipulation/applications/pr2_interactive_object_detection/msg_gen/cpp/include',
 '-isystem',
-'include'
+'/opt/ros/groovy/stacks/pr2_object_manipulation/applications/pr2_interactive_object_detection/msg_gen/cpp/include',
+'-isystem',
+'/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/include',
+'-isystem',
+'/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/msg_gen/cpp/include',
+'-isystem',
+'/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/srv_gen/cpp/include',
+'-I',
+'include',
+'-I',
+'msg_gen/cpp/include'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
