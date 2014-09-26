@@ -9,10 +9,10 @@ using rviz_objdetect_caller::Clusters;
 using rviz_objdetect_caller::TablePublisher;
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "publish_boxes_node");
+  ros::init(argc, argv, "publish_table_node");
   TablePublisher publisher(
     "table_clusters",
-    "segmented_objects_boxes");
+    "segmented_objects_table");
   publisher.Start();
   ros::spin();
   return 0;
