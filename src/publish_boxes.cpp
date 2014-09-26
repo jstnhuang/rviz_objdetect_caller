@@ -86,6 +86,7 @@ void BoxPublisher::MakeMarker(
 }
 
 void BoxPublisher::ClusterCallback(const Clusters& clusters) {
+  ClearMarkers();
   prev_number_clusters_ = clusters.point_clouds.size();
 
   // The bounding box service call may take time, so cache the responses.
