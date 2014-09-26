@@ -70,7 +70,7 @@ void TablePublisher::ClusterCallback(const Clusters& clusters) {
   Pose message_pose = table.pose.pose;
   Pose pose = message_pose;
   pose.position.x += table.x_min + (table.x_max - table.x_min) / 2;
-  pose.position.y += table.y_min + (table.y_max + table.y_min) / 2;
+  pose.position.y += table.y_min + (table.y_max - table.y_min) / 2;
   Vector3 dimensions;
   dimensions.x = table.x_max - table.x_min;
   dimensions.y = table.y_max - table.y_min;
