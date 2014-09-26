@@ -67,6 +67,12 @@ void TablePublisher::MakeMarker(
 void TablePublisher::ClusterCallback(const Clusters& clusters) {
   Table table = clusters.table;
   Marker marker;
+  Pose message_pose = table.pose.pose;
+  Pose pose = message_pose;
+  float depth = table.x_max - table.x_min;
+  float width = table.y_max - table.y_min;
+  pose.position.x += table.x_min + depth / 2;
+  pose.position.y += table.y_min + width / 2;
   Vector3 dimensions;
   dimensions.x = table.x_max - table.x_min;
   dimensions.y = table.y_max - table.y_min;
