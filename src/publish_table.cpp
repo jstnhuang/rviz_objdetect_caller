@@ -76,7 +76,7 @@ void TablePublisher::ClusterCallback(const Clusters& clusters) {
   dimensions.y = table.y_max - table.y_min;
   dimensions.z = 0.05;
   MakeMarker(
-    table.pose.pose,
+    pose,
     dimensions,
     &marker);
   marker_pub_.publish(marker);
