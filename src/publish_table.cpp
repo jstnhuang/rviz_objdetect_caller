@@ -59,7 +59,7 @@ void TablePublisher::MakeMarker(
   marker->pose = pose;
   marker->scale = dimensions;
   marker->color.a = 1;
-  marker->color.r = 1;
+  marker->color.r = 0;
   marker->color.g = 0;
   marker->color.b = 1;
 }
