@@ -52,3 +52,11 @@ rosbuild_add_compile_flags(publish_boxes "-std=c++0x")
 rosbuild_add_executable(publish_boxes_node src/publish_boxes_node.cpp)
 target_link_libraries(publish_boxes_node publish_boxes)
 rosbuild_add_compile_flags(publish_boxes_node "-std=c++0x")
+
+rosbuild_add_library(publish_table src/publish_table.cpp)
+rosbuild_link_boost(publish_table thread)
+rosbuild_add_compile_flags(publish_table "-std=c++0x")
+
+rosbuild_add_executable(publish_table_node src/publish_table_node.cpp)
+target_link_libraries(publish_table_node publish_table)
+rosbuild_add_compile_flags(publish_table_node "-std=c++0x")

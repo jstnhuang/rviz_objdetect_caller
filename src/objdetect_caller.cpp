@@ -6,6 +6,7 @@
 #include <ros/ros.h>
 #include <string>
 #include <tabletop_object_detector/TabletopSegmentation.h>
+#include <tabletop_object_detector/Table.h>
 
 #include "pr2_interactive_object_detection/UserCommandAction.h"
 #include "rviz_objdetect_caller/Clusters.h"
@@ -62,6 +63,7 @@ bool ObjDetectCaller::DoSegmentation(Clusters* clusters) {
   for (const auto& cloud : seg_service.response.clusters) {
     clusters->point_clouds.push_back(cloud);
   }
+  clusters->table = seg_service.response.table;
   return true;
 }
 }
