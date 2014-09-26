@@ -22,7 +22,7 @@ class BoxPublisher {
   void Start();
 
  private:
-  void ClearMarkers();
+  void ClearOldMarkers(int num_current_clusters);
   void MakeMarker(
     const int i,
     const geometry_msgs::Pose& pose,

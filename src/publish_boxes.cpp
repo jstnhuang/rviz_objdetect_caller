@@ -54,8 +54,8 @@ void BoxPublisher::Start() {
     this);
 }
 
-void BoxPublisher::ClearMarkers() {
-  for (int i = 0; i < prev_number_clusters_; ++i) {
+void BoxPublisher::ClearOldMarkers(int num_current_clusters) {
+  for (int i = num_current_clusters; i < prev_number_clusters_; ++i) {
     Marker marker;
     marker.header.frame_id = kFixedFrame;
     marker.header.stamp = ros::Time::now();
@@ -86,7 +86,7 @@ void BoxPublisher::MakeMarker(
 }
 
 void BoxPublisher::ClusterCallback(const Clusters& clusters) {
-  ClearMarkers();
+  ClearOldMarkers(clusters.point_clouds.size());
   prev_number_clusters_ = clusters.point_clouds.size();
 
   // The bounding box service call may take time, so cache the responses.
